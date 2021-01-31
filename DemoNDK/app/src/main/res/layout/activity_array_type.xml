@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StringTypeActivity">
+    tools:context=".ArrayTypeActivity">
 
     <Button
-        android:id="@+id/string_type_btn"
+        android:id="@+id/array_type_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="JNI字符串类型转换"
+        android:text="JNI数组类型转换"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

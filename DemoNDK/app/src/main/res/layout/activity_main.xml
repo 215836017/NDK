@@ -28,6 +28,14 @@
             android:onClick="mainBtnClick"
             android:text="字符串类型" />
 
+        <Button
+            android:id="@+id/array_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="mainBtnClick"
+            android:text="引用类型" />
+
     </LinearLayout>
 
 </ScrollView>
