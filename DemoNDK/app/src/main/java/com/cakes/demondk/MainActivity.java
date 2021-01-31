@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.string_type:
-                intent.setClass(this, BaseTypeActivity.class);
+                intent.setClass(this, StringTypeActivity.class);
                 break;
         }
 

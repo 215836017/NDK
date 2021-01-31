@@ -21,37 +21,20 @@ public class StringTypeActivity extends AppCompatActivity {
         findViewById(R.id.string_type_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testBaseType();
+                testStringType();
             }
         });
     }
 
-    private void testBaseType() {
+    private void testStringType() {
 
-        byte b = 10;
-        byte resultByte = jniBaseType.callJniByte(b);
-        LogUtil.i(TAG, "testBaseType() -- resultByte = " + resultByte);
+        String result1 = jniStringType.getAndReleaseString("hello String");
+        LogUtil.d(TAG, "testBaseType() -- result1 = " + result1);
 
-        char resultChar = jniBaseType.callJniChar('c');
-        LogUtil.d(TAG, "testBaseType() -- resultChar = " + resultChar);
+        String result2 = jniStringType.reverseString("aaa_bbb");
+        LogUtil.i(TAG, "testBaseType() -- result2 = " + result2);
 
-        short num = 2;
-        short resultShort = jniBaseType.callJniShort(num);
-        LogUtil.w(TAG, "testBaseType() -- resultShort = " + resultShort);
-
-        int resultInt = jniBaseType.callJniInt(4);
-        LogUtil.i(TAG, "testBaseType() -- resultInt = " + resultInt);
-
-        long resultLong = jniBaseType.callJniLong(6);
-        LogUtil.d(TAG, "testBaseType() -- resultLong = " + resultLong);
-
-        float resultFloat = jniBaseType.callJniFloat(8.0f);
-        LogUtil.w(TAG, "testBaseType() -- resultFloat = " + resultFloat);
-
-        double resultDouble = jniBaseType.callJniDouble(0.123);
-        LogUtil.i(TAG, "testBaseType() -- resultDouble = " + resultDouble);
-
-        boolean resultBoolean = jniBaseType.callJniBoolean(true);
-        LogUtil.d(TAG, "testBaseType() -- resultBoolean = " + resultBoolean);
+        String result3 = jniStringType.getHalfString("a123456b");
+        LogUtil.w(TAG, "testBaseType() -- result3 = " + result3);
     }
 }
