@@ -44,6 +44,14 @@
             android:onClick="mainBtnClick"
             android:text="JNI访问Java类字段" />
 
+        <Button
+            android:id="@+id/method_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="mainBtnClick"
+            android:text="JNI访问Java类方法" />
+
     </LinearLayout>
 
 </ScrollView>

@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.filed_type:
                 intent.setClass(this, FiledTypeActivity.class);
                 break;
+
+            case R.id.method_type:
+                intent.setClass(this, MethodTypeActivity.class);
+                break;
         }
 
         startActivity(intent);
