@@ -26,6 +26,7 @@ add_library( # Sets the name of the library.
         arrayType.cpp
         filedType.cpp
         methodType.cpp
+        constructType.cpp
         )
 
 # Searches for a specified prebuilt library and stores the path as a

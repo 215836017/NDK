@@ -1,8 +1,11 @@
 package com.cakes.demondk.bean;
 
+import com.cakes.demondk.LogUtil;
+
 public class Animal {
 
     protected String name;
+    public static int num = 0;
 
     public Animal(String name) {
         this.name = name;
@@ -16,4 +19,7 @@ public class Animal {
         this.name = name;
     }
 
+    public void printAge(int age) {
+        LogUtil.i("Animal", "printAge() -- age = " + age);
+    }
 }

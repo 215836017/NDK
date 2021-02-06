@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoNDK">
+        <activity android:name=".ConstructTypeActivity"></activity>
         <activity android:name=".MethodTypeActivity" />
         <activity android:name=".FiledTypeActivity" />
         <activity android:name=".ArrayTypeActivity" />
