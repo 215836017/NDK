@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.jni_onLoad_type:
                 intent.setClass(this, JniOnLoadActivity.class);
                 break;
+
+            case R.id.jni_callback_type:
+                intent.setClass(this, JniCallbackActivity.class);
+                break;
         }
 
         startActivity(intent);
