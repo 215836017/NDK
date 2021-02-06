@@ -36,6 +36,14 @@
             android:onClick="mainBtnClick"
             android:text="数组类型" />
 
+        <Button
+            android:id="@+id/filed_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="mainBtnClick"
+            android:text="JNI访问Java类字段" />
+
     </LinearLayout>
 
 </ScrollView>

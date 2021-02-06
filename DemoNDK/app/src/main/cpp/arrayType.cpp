@@ -16,9 +16,9 @@ Java_com_cakes_demondk_jni_JniArrayType_primitiveTypeArray(JNIEnv *env, jclass t
                                                            jbyteArray byte_array) {
 
     /*
-     * ĞÎ²ÎÖĞ£º
-     *   jclass  ¶ÔÓ¦ÓÚJavaÖĞµÄ¾²Ì¬·½·¨
-     *   jobject ¶ÔÓ¦ÓÚJavaÖĞµÄ¶ÔÏó·½·¨
+     * å½¢å‚ä¸­ï¼š
+     *   jclass  å¯¹åº”äºJavaä¸­çš„é™æ€æ–¹æ³•
+     *   jobject å¯¹åº”äºJavaä¸­çš„å¯¹è±¡æ–¹æ³•
      */
 
     jint *intArray = env->GetIntArrayElements(int_array, NULL);
@@ -62,7 +62,7 @@ Java_com_cakes_demondk_jni_JniArrayType_intArraySum(JNIEnv *env, jclass thiz,
     jint *intArray;
     int sum = 0;
 
-    //²Ù×÷·½·¨Ò»£ºÖ¸ÕëĞÎÊ½
+    //æ“ä½œæ–¹æ³•ä¸€ï¼šæŒ‡é’ˆå½¢å¼
     intArray = env->GetIntArrayElements(int_array, NULL);
     if (NULL == intArray) {
         LOGE("null == intArray");
@@ -76,18 +76,18 @@ Java_com_cakes_demondk_jni_JniArrayType_intArraySum(JNIEnv *env, jclass thiz,
 //        sum += intArray[i];
 //    }
 //    LOGI("JniArrayType_intArraySum() -- sum = %d", sum);
-// TODO ºÜÖØÒª£ºÊ¹ÓÃÍêÁË±ğÍüÁËÊÍ·ÅÄÚ´æ
+// TODO å¾ˆé‡è¦ï¼šä½¿ç”¨å®Œäº†åˆ«å¿˜äº†é‡Šæ”¾å†…å­˜
 //    env->ReleaseIntArrayElements(int_array, intArray, 0);
 //    return sum;
 
-    // ²Ù×÷·½·¨¶ş£ºÊı×éĞÎÊ½
+    // æ“ä½œæ–¹æ³•äºŒï¼šæ•°ç»„å½¢å¼
     jint intBuf[length];
     env->GetIntArrayRegion(int_array, 0, length, intBuf);
     for (int i = 0; i < length; i++) {
         sum += intBuf[i];
     }
     LOGI("JniArrayType_intArraySum() -- sum = %d", sum);
-    // TODO ºÜÖØÒª£ºÊ¹ÓÃÍêÁË±ğÍüÁËÊÍ·ÅÄÚ´æ
+    // TODO å¾ˆé‡è¦ï¼šä½¿ç”¨å®Œäº†åˆ«å¿˜äº†é‡Šæ”¾å†…å­˜
     env->ReleaseIntArrayElements(int_array, intArray, 0);
     return sum;
 
@@ -103,7 +103,7 @@ Java_com_cakes_demondk_jni_JniArrayType_getIntArray(JNIEnv *env, jclass thiz, ji
     for (int i = 0; i < num; i++) {
         intBuf[i] = i * 2;
     }
-    // Ê¹ÓÃ setIntArrayRegion À´¸³Öµ
+    // ä½¿ç”¨ setIntArrayRegion æ¥èµ‹å€¼
     env->SetIntArrayRegion(intArray, 0, num, intBuf);
 
     return intArray;
@@ -113,23 +113,23 @@ extern "C"
 JNIEXPORT jobjectArray JNICALL
 Java_com_cakes_demondk_jni_JniArrayType_getTwoDimensionalArray(JNIEnv *env, jclass thiz,
                                                                jint size) {
-    // ÉùÃ÷Ò»¸ö¶ÔÏóÊı×é
+    // å£°æ˜ä¸€ä¸ªå¯¹è±¡æ•°ç»„
     jobjectArray result;
-    // ÕÒµ½¶ÔÏóÊı×éÖĞ¾ßÌåµÄ¶ÔÏóÀàĞÍ
-    jclass intArrayCls = env->FindClass("[I");  // [I ÊÇintÊı×éÀàĞÍ
+    // æ‰¾åˆ°å¯¹è±¡æ•°ç»„ä¸­å…·ä½“çš„å¯¹è±¡ç±»å‹
+    jclass intArrayCls = env->FindClass("[I");  // [I æ˜¯intæ•°ç»„ç±»å‹
     if (NULL == intArrayCls) {
         return NULL;
     }
-    // Ïàµ±ÓÚ³õÊ¼»¯Ò»¸ö¶ÔÏóÊı×é£¬ÓÃÖ¸¶¨µÄ¶ÔÏóÀàĞÍ
+    // ç›¸å½“äºåˆå§‹åŒ–ä¸€ä¸ªå¯¹è±¡æ•°ç»„ï¼Œç”¨æŒ‡å®šçš„å¯¹è±¡ç±»å‹
     result = env->NewObjectArray(size, intArrayCls, NULL);
     if (NULL == result) {
         return NULL;
     }
 
     for (int i = 0; i < size; i++) {
-        // ÓÃÀ´¸øÕûĞÍÊı×éÌî³äÊı¾İµÄ»º³åÇø
+        // ç”¨æ¥ç»™æ•´å‹æ•°ç»„å¡«å……æ•°æ®çš„ç¼“å†²åŒº
         jint tmp[256];
-        // ÉùÃ÷Ò»¸öÕûĞÍÊı×é
+        // å£°æ˜ä¸€ä¸ªæ•´å‹æ•°ç»„
         jintArray iarr = env->NewIntArray(size);
         if (NULL == iarr) {
             return NULL;
@@ -137,11 +137,11 @@ Java_com_cakes_demondk_jni_JniArrayType_getTwoDimensionalArray(JNIEnv *env, jcla
         for (int j = 0; j < size; ++j) {
             tmp[j] = i + j;
         }
-        // ¸øÕûĞÍÊı×éÌî³äÊı¾İ
+        // ç»™æ•´å‹æ•°ç»„å¡«å……æ•°æ®
         env->SetIntArrayRegion(iarr, 0, size, tmp);
-        // ¸ø¶ÔÏóÊı×éÖ¸¶¨Î»ÖÃÌî³äÊı¾İ£¬Õâ¸öÊı¾İ¾ÍÊÇÒ»¸öÒ»Î¬ÕûĞÍÊı×é
+        // ç»™å¯¹è±¡æ•°ç»„æŒ‡å®šä½ç½®å¡«å……æ•°æ®ï¼Œè¿™ä¸ªæ•°æ®å°±æ˜¯ä¸€ä¸ªä¸€ç»´æ•´å‹æ•°ç»„
         env->SetObjectArrayElement(result, i, iarr);
-        // ÊÍ·Å¾Ö²¿ÒıÓÃ
+        // é‡Šæ”¾å±€éƒ¨å¼•ç”¨
         env->DeleteLocalRef(iarr);
     }
 
@@ -157,11 +157,11 @@ Java_com_cakes_demondk_jni_JniArrayType_printAnimalsName(JNIEnv *env, jclass thi
     int len = env->GetArrayLength(animals);
 
     jclass classAnimal = env->FindClass("com/cakes/demondk/bean/Animal");
-    // Àà¶ÔÓ¦µÄ×Ö¶ÎÃèÊö
+    // ç±»å¯¹åº”çš„å­—æ®µæè¿°
     jfieldID fieldIdName = env->GetFieldID(classAnimal, "name", "Ljava/lang/String;");
-    // ÀàµÄ×Ö¶Î¾ßÌåµÄÖµ
+    // ç±»çš„å­—æ®µå…·ä½“çš„å€¼
     jstring jstr;
-    // Àà×Ö¶Î¾ßÌåÖµ×ª»»³É C/C++ ×Ö·û´®
+    // ç±»å­—æ®µå…·ä½“å€¼è½¬æ¢æˆ C/C++ å­—ç¬¦ä¸²
     const char *str;
 
     for (int i = 0; i < len; i++) {

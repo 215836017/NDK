@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoNDK">
-        <activity android:name=".ArrayTypeActivity"></activity>
+        <activity android:name=".FiledTypeActivity"></activity>
+        <activity android:name=".ArrayTypeActivity" />
         <activity android:name=".BaseTypeActivity" />
         <activity android:name=".StringTypeActivity" />
         <activity android:name=".MainActivity">
