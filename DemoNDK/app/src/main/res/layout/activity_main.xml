@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:onClick="mainBtnClick"
-            android:text="引用类型" />
+            android:text="数组类型" />
 
     </LinearLayout>
 
