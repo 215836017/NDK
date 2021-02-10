@@ -30,6 +30,7 @@ add_library( # Sets the name of the library.
         jniOnLoadType.cpp
         jniCallbackType.cpp
         referenceType.cpp
+        exceptionType.cpp
         )
 
 # Searches for a specified prebuilt library and stores the path as a
