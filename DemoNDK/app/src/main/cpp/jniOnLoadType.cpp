@@ -52,22 +52,23 @@ int registerNativeMethods(JNIEnv *env, const char *className, JNINativeMethod *n
     return JNI_TRUE;
 }
 
-JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
-    LOGI("JNI_OnLoad() -- start 1111");
-
-    JNIEnv *env;
-    if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) {
-        return JNI_ERR;
-    }
-
-    int result = registerNativeMethods(env, JAVA_CLASS, gMethods, NELEM(gMethods));
-
-    if (result == JNI_TRUE) {
-        return JNI_VERSION_1_6;
-    }
-
-    return result;
-}
+// 和threadType.cpp中的JNI_OnLoad()编译时会冲突，故这里注释掉
+//JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
+//    LOGI("JNI_OnLoad() -- start 1111");
+//
+//    JNIEnv *env;
+//    if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) {
+//        return JNI_ERR;
+//    }
+//
+//    int result = registerNativeMethods(env, JAVA_CLASS, gMethods, NELEM(gMethods));
+//
+//    if (result == JNI_TRUE) {
+//        return JNI_VERSION_1_6;
+//    }
+//
+//    return result;
+//}
 
 JNIEXPORT void JNI_OnUnload(JavaVM *vm, void *reserved) {
     LOGI("JNI_OnUnload() -- start 1111");

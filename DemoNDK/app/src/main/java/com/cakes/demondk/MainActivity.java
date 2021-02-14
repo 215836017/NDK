@@ -59,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.jni_exception_type:
                 intent.setClass(this, JniExceptionActivity.class);
                 break;
+
+            case R.id.jni_thread_type:
+                intent.setClass(this, JniThreadActivity.class);
+                break;
         }
 
         startActivity(intent);

@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DemoNDK">
+        <activity android:name=".JniThreadActivity"></activity>
         <activity android:name=".JniExceptionActivity" />
         <activity android:name=".JniReferenceActivity" />
         <activity android:name=".JniCallbackActivity" />

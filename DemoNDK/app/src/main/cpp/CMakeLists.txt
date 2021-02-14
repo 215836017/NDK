@@ -21,6 +21,7 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
+        common.cpp
         baseType.cpp
         stringType.cpp
         arrayType.cpp
@@ -31,6 +32,7 @@ add_library( # Sets the name of the library.
         jniCallbackType.cpp
         referenceType.cpp
         exceptionType.cpp
+        threadType.cpp
         )
 
 # Searches for a specified prebuilt library and stores the path as a

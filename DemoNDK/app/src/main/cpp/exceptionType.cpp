@@ -1,5 +1,6 @@
 #include <jni.h>
 #include "logUtil.h"
+#include "common.h"
 
 extern "C"
 JNIEXPORT void JNICALL
@@ -42,13 +43,6 @@ Java_com_cakes_demondk_jni_JniExceptionType_doit(JNIEnv *env, jobject thiz) {
     }
 }
 
-void throwByName(JNIEnv *env, const char *name, const char *msg) {
-    jclass cls = env->FindClass(name);
-    if (cls != NULL) {
-        env->ThrowNew(cls, msg);
-    }
-    env->DeleteLocalRef(cls);
-}
 
 extern "C"
 JNIEXPORT void JNICALL
@@ -70,7 +64,7 @@ Java_com_cakes_demondk_jni_JniExceptionType_nativeInvokeJavaException(JNIEnv *en
     jthrowable exc = env->ExceptionOccurred();
 //    jboolean  result = env->ExceptionCheck();
 
-    if(exc){
+    if (exc) {
         env->ExceptionDescribe();
         // 这才是关键不让应用崩溃的代码
         env->ExceptionClear();

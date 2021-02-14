@@ -92,6 +92,14 @@
             android:onClick="mainBtnClick"
             android:text="JNI中异常处理" />
 
+        <Button
+            android:id="@+id/jni_thread_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="mainBtnClick"
+            android:text="JNI中线程操作" />
+
     </LinearLayout>
 
 </ScrollView>
