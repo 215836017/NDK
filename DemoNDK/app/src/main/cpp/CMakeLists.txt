@@ -33,6 +33,7 @@ add_library( # Sets the name of the library.
         referenceType.cpp
         exceptionType.cpp
         threadType.cpp
+        threadType2.cpp
         )
 
 # Searches for a specified prebuilt library and stores the path as a

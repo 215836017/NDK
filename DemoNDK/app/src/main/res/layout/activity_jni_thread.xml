@@ -36,5 +36,21 @@
             android:layout_margin="20dp"
             android:onClick="threadActBtnClick"
             android:text="等待JNI中线程运行结果" />
+
+        <Button
+            android:id="@+id/jni_thread_button_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="threadActBtnClick"
+            android:text="JNI中的线程同步--挂起" />
+
+        <Button
+            android:id="@+id/jni_thread_button_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="threadActBtnClick"
+            android:text="JNI中的线程同步--唤醒" />
     </LinearLayout>
 </RelativeLayout>

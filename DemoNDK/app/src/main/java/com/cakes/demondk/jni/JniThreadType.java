@@ -10,6 +10,10 @@ public class JniThreadType extends BaseJNI {
 
     public native void testNativeThreadJoin();
 
+    public native void waitNativeThread();
+
+    public native void notifyNativeThread();
+
     public native void nativeInit();
 
     public native void nativeFree();

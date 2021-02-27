@@ -35,11 +35,21 @@ public class JniThreadActivity extends AppCompatActivity {
             LogUtil.w(TAG, "testJniThread() -- 33333");
             jniThreadType.testNativeThreadJoin();
             LogUtil.w(TAG, "testJniThread() -- 33333  end end ");
+
+        } else if (view.getId() == R.id.jni_thread_button_wait) {
+            LogUtil.w(TAG, "testJniThread() -- 4444");
+            jniThreadType.waitNativeThread();
+            LogUtil.w(TAG, "testJniThread() -- 4444  end end ");
+
+        } else if (view.getId() == R.id.jni_thread_button_notify) {
+            LogUtil.w(TAG, "testJniThread() -- 55555");
+            jniThreadType.notifyNativeThread();
+            LogUtil.w(TAG, "testJniThread() -- 55555  end end ");
+
         }
     }
 
     private void testCreateThread() {
-
 
         LogUtil.d(TAG, "testJniThread() -- 33333");
         jniThreadType.posixThreads(3, 4);
