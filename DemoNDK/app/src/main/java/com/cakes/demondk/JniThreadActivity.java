@@ -1,3 +1,4 @@
+
 package com.cakes.demondk;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,23 +18,28 @@ public class JniThreadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jni_thread);
-
-        findViewById(R.id.jni_thread_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                testJniThread();
-            }
-        });
     }
 
-    private void testJniThread() {
-        LogUtil.i(TAG, "testJniThread() -- 1111111");
-        jniThreadType.createNativeThread();
-        LogUtil.i(TAG, "testJniThread() -- 1111111  end end ");
+    public void threadActBtnClick(View view) {
+        if (view.getId() == R.id.jni_thread_button_create) {
+            LogUtil.i(TAG, "testJniThread() -- 1111111");
+            jniThreadType.createNativeThread();
+            LogUtil.i(TAG, "testJniThread() -- 1111111  end end ");
 
-        LogUtil.w(TAG, "testJniThread() -- 222222");
-        jniThreadType.nativeInit();
-        LogUtil.w(TAG, "testJniThread() -- 222222  end end ");
+        } else if (view.getId() == R.id.jni_thread_button_create_2) {
+            LogUtil.w(TAG, "testJniThread() -- 222222");
+            jniThreadType.createNativeThreadWithArgs();
+            LogUtil.w(TAG, "testJniThread() -- 222222  end end ");
+
+        } else if (view.getId() == R.id.jni_thread_button_run) {
+            LogUtil.w(TAG, "testJniThread() -- 33333");
+            jniThreadType.testNativeThreadJoin();
+            LogUtil.w(TAG, "testJniThread() -- 33333  end end ");
+        }
+    }
+
+    private void testCreateThread() {
+
 
         LogUtil.d(TAG, "testJniThread() -- 33333");
         jniThreadType.posixThreads(3, 4);

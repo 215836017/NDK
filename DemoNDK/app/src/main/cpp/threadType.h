@@ -19,6 +19,12 @@ JNIEXPORT void JNICALL
 Java_com_cakes_demondk_jni_JniThreadType_createNativeThread(JNIEnv *, jobject);
 
 JNIEXPORT void JNICALL
+Java_com_cakes_demondk_jni_JniThreadType_createNativeThreadWithArgs(JNIEnv *, jobject);
+
+JNIEXPORT void JNICALL
+Java_com_cakes_demondk_jni_JniThreadType_testNativeThreadJoin(JNIEnv *, jobject);
+
+JNIEXPORT void JNICALL
 Java_com_cakes_demondk_jni_JniThreadType_nativeInit(JNIEnv *, jobject);
 
 JNIEXPORT void JNICALL
