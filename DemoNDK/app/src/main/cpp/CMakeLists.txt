@@ -34,6 +34,7 @@ add_library( # Sets the name of the library.
         exceptionType.cpp
         threadType.cpp
         threadType2.cpp
+        threadType3.cpp
         )
 
 # Searches for a specified prebuilt library and stores the path as a

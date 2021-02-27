@@ -39,6 +39,9 @@ Java_com_cakes_demondk_jni_JniThreadType_waitNativeThread(JNIEnv *, jobject);
 JNIEXPORT void JNICALL
 Java_com_cakes_demondk_jni_JniThreadType_notifyNativeThread(JNIEnv *, jobject);
 
+JNIEXPORT void JNICALL
+Java_com_cakes_demondk_jni_JniThreadType_produceAndConsumeThread(JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

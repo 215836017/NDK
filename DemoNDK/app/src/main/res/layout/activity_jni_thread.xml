@@ -52,5 +52,13 @@
             android:layout_margin="20dp"
             android:onClick="threadActBtnClick"
             android:text="JNI中的线程同步--唤醒" />
+
+        <Button
+            android:id="@+id/jni_thread_button_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="threadActBtnClick"
+            android:text="JNI中线程同步--生产者消费者模型" />
     </LinearLayout>
 </RelativeLayout>

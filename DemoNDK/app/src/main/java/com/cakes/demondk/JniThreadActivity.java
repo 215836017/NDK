@@ -46,13 +46,11 @@ public class JniThreadActivity extends AppCompatActivity {
             jniThreadType.notifyNativeThread();
             LogUtil.w(TAG, "testJniThread() -- 55555  end end ");
 
+        } else if (view.getId() == R.id.jni_thread_button_demo) {
+            LogUtil.w(TAG, "testJniThread() -- 66666");
+            jniThreadType.produceAndConsumeThread();
+            LogUtil.w(TAG, "testJniThread() -- 6666666  end end ");
         }
     }
 
-    private void testCreateThread() {
-
-        LogUtil.d(TAG, "testJniThread() -- 33333");
-        jniThreadType.posixThreads(3, 4);
-        LogUtil.d(TAG, "testJniThread() -- 33333  end end ");
-    }
 }

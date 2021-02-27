@@ -17,7 +17,7 @@ void *waitThread(void *) {
     pthread_mutex_lock(&mutex);  // 拿到锁
     while (flag == 0) {
         LOGI("waitThread() ---  waitting...");
-        pthread_cond_wait(&cond, &mutex);  // 一直等待，知道cond条件被满足
+        pthread_cond_wait(&cond, &mutex);  // 一直等待，直到cond条件被满足
     }
     LOGI("waitThread() ---  2222222...");
     pthread_mutex_unlock(&mutex); // 释放锁

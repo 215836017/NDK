@@ -14,11 +14,7 @@ public class JniThreadType extends BaseJNI {
 
     public native void notifyNativeThread();
 
-    public native void nativeInit();
-
-    public native void nativeFree();
-
-    public native void posixThreads(int threads, int iterations);
+    public native void produceAndConsumeThread();
 
     /**
      * 打印线程名称，并且模拟耗时任务
