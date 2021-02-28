@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".rotate.RotateImageActivity">
+
+    <ImageView
+        android:id="@+id/image_act_image"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/a0" />
+
+    <Button
+        android:id="@+id/image_act_btn_rotate_90"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="imageBtnClick"
+        android:text="图像旋转90度"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/image_act_btn_convert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="imageBtnClick"
+        android:text="图像翻转"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/image_act_btn_mirror"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="imageBtnClick"
+        android:text="图像镜像"
+        android:textSize="30dp" />
+
+</LinearLayout>

@@ -11,6 +11,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/main_btn_rotate_iamge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="mainBtnClick"
+            android:text="图像基本的旋转操作"
+            android:textSize="30dp" />
     </LinearLayout>
 
 
